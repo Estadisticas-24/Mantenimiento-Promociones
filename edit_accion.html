@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Acción Comercial</title>
+</head>
+<body>
+    <h1>Editar Acción Comercial</h1>
+    <form action="/acciones/edit/{{ accion.CODAccionComercial }}" method="POST">
+        <input type="text" name="descripcion" value="{{ accion.Descripcion }}" required>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

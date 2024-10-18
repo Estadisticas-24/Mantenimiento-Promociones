@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acciones Comerciales</title>
+</head>
+<body>
+    <h1>Acciones Comerciales</h1>
+    <form action="/acciones" method="POST">
+        <input type="text" name="descripcion" placeholder="Descripción" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <ul>
+        {% for accion in acciones %}
+            <li>
+                {{ accion[1] }}
+                <a href="{{ url_for('edit_accion', codaccion=accion[0]) }}">Editar</a> 
+                <form action="{{ url_for('delete_accion', codaccion=accion[0]) }}" method="POST" style="display:inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
